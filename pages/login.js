@@ -2,7 +2,8 @@ import React from 'react'
 
 class Login extends React.Component {
     static async getInitialProps({ query }) {
-        const url = 'http://localhost:3000/api/top-artists?code='+ query.code;
+        const url = 'https://wrestle-the-pigeon-six.vercel.app/api/top-artists?code='+ query.code;
+        //const url = 'http://localhost:3000/api/top-artists?code='+ query.code;
         const res = await fetch(url);
         const json = await res.json();
         return { topArtists : json.items }
