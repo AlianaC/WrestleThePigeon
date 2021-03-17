@@ -5,7 +5,9 @@ const {
   SPOTIFY_CLIENT_SECRET: client_secret,
 } = process.env;
 
-var redirect_uri = 'http://localhost:3000/login/';
+//var redirect_uri = 'http://localhost:3000/login/';
+var redirect_uri = "https://wrestle-the-pigeon-six.vercel.app/login/";
+
 
 const basic = (new Buffer.from(client_id + ':' + client_secret).toString('base64'));
 const TOP_TRACKS_ENDPOINT = `https://api.spotify.com/v1/me/top/artists`;
