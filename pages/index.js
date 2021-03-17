@@ -14,7 +14,7 @@ export default function Home() {
 
         <div>
           <Link href="/api/authenticate">
-          <button>Connect Your Spotify</button>
+          <button className={styles.connectbutton}>Connect Your Spotify</button>
           </Link>
         </div>
 
