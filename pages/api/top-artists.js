@@ -14,16 +14,17 @@ export default async (req, res) => {
     //console.log("ITEMS: " + items);
     
     var topArtists = items.map(artist => artist.name).slice(0,10);
-    //console.log(topArtists);
+    console.log(topArtists);
     var ids = [];
-
     await Promise.all(
         topArtists.map(async (artist) => {
             var url = `https://api.songkick.com/api/3.0/search/artists.json?apikey=${key}&query=`;
             const res = await fetch(url + artist);
             const id = await res.json();
             //console.log(artist + " " + id.resultsPage.results.artist[0].id);
-            ids.push(id.resultsPage.results.artist[0].id);
+            if(!id.resultsPage.results == null){
+                ids.push(id.resultsPage.results.artist[0].id);
+            }
         })
     )
 
