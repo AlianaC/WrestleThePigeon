@@ -1,9 +1,15 @@
 import querystring from 'querystring';
 
+/*
 const {
   SPOTIFY_CLIENT_ID: client_id,
   SPOTIFY_CLIENT_SECRET: client_secret,
 } = process.env;
+*/
+
+export const client_id = process.env.SPOTIFY_CLIENT_ID;
+export const client_secret = process.env.SPOTIFY_CLIENT_SECRET;
+
 
 //var redirect_uri = 'http://localhost:3000/login/';
 var redirect_uri = "https://wrestle-the-pigeon-six.vercel.app/login/";
