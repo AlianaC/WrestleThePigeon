@@ -11,10 +11,11 @@ export default async (req, res) => {
     const response = await getTopArtists(code);
     const { items } = await response.json();
 
-    //console.log("ITEMS: " + items);
     
     var topArtists = items.map(artist => artist.name).slice(0,10);
+    //console.log(items);
     console.log(topArtists);
+
     var ids = [];
     await Promise.all(
         topArtists.map(async (artist) => {
