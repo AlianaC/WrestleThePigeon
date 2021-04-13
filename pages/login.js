@@ -1,5 +1,6 @@
 import React from 'react' 
-import { getTopArtists } from './api/Spotify';
+import styles from '../styles/Home.module.css'
+import Bar from '../components/bar.js'
 
 class Login extends React.Component {
 
@@ -21,6 +22,7 @@ class Login extends React.Component {
 
         var top10 = states.slice(0,10);
         var bottom10 = states.slice(states.length-11, states.length-1);
+        console.log(top10);
         return{
             top10: top10,
             bottom10: bottom10
@@ -77,9 +79,15 @@ class Login extends React.Component {
                 <h3>Top Artists:</h3>
                 <div>{topArtists.map(artist => <div key={artist.name}>{artist.name}</div>)}</div>
                 <h3>Top States:</h3> 
-                <div>{states.top10.map(state => <div key={state[0]}>{state[0]}: {state[1]}</div>)}</div>
-                <h3>Bottom States:</h3> 
-                <div>{states.bottom10.map(state => <div key={state[0]}>{state[0]}: {state[1]}</div>)}</div>
+                <div className={styles.graph}>
+                    <div>{states.top10.map(state => <div key={state[0]}>{state[0]}: {state[1]}</div>)}</div>
+                    <Bar data={states.top10}/>
+                </div>
+                <h3>Bottom States:</h3>
+                <div className={styles.graph}>
+                    <div>{states.bottom10.map(state => <div key={state[0]}>{state[0]}: {state[1]}</div>)}</div>
+                    <Bar data={states.bottom10}/>
+                </div> 
                 <h3>Top Genres:</h3>
                 <div>{topGenres.map(genre => <div key={genre[0]}>{genre[0]}: {genre[1]}</div>)}</div>
             </div>
