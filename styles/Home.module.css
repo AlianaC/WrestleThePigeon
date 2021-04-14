@@ -17,14 +17,29 @@
   z-index: 1;
 }
 
+.userinfo {
+  color: #000000;
+  line-height: 1;
+  font-size: 1rem;
+  padding-left: 100px;
+}
+
+.second {
+  border: 5px solid #ddd4c4;
+  background-image: url("../public/SecondPage.jpg");
+  background-repeat: repeat-y;
+  background-size: contain;
+}
+
 .footer {
   width: 100%;
   height: 100px;
-  border-top: 1px solid #eaeaea;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  text-align: left;
+  z-index: 1;
+  color: #fff;
 }
 
 .footer img {
@@ -37,6 +52,10 @@
   align-items: center;
 }
 
+.foottext {
+  padding-left: 20px;
+}
+
 .connectbutton {
   margin: 20px;
   padding: 12px 12px;
@@ -46,17 +65,17 @@
   font-size: 14px;
   font-weight: 540;
   line-height: 1.3;
-  background-color: #416dea;
+  background-color: #000000;
   color: #fff;
 }
 
 .connectbutton:hover {
   transition: all 150ms linear;
-  opacity: 0.85;
+  opacity: 0.65;
 }
 
 .title a {
-  color: #0070f3;
+  color: #000000;
   text-decoration: none;
 }
 
@@ -67,7 +86,7 @@
 }
 
 .title {
-  color: #0070f3;
+  color: #000000;
   margin: 0;
   line-height: 1.15;
   font-size: 4rem;
@@ -78,9 +97,34 @@
   text-align: center;
 }
 
+.information {
+  color: #000000;
+  margin: 10px;
+  line-height: 2.5;
+  font-size: 1rem;
+  padding: 0px 100px;
+}
+
+.information,
+.description {
+  text-align: center;
+}
+
 .description {
   line-height: 1.5;
   font-size: 1.5rem;
+}
+
+.interested {
+  color: #000000;
+  margin: 10px;
+  line-height: 3.5;
+  font-size: 1.5rem;
+}
+
+.interested,
+.description {
+  text-align: center
 }
 
 .code {

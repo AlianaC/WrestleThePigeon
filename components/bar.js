@@ -16,8 +16,8 @@ class Bar extends React.Component {
     }
 
     render() {
-        console.log("DATA");
-        console.log(this.props.data);
+        //console.log("DATA");
+        //console.log(this.props.data);
         var data2 = this.organizeData(this.props.data);
         //console.log(data);
 

@@ -74,22 +74,24 @@ class Login extends React.Component {
         
 
         return (
-            <div>
-                <h2>Successfully connected with Spotify</h2>
-                <h3>Top Artists:</h3>
-                <div>{topArtists.map(artist => <div key={artist.name}>{artist.name}</div>)}</div>
-                <h3>Top States:</h3> 
-                <div className={styles.graph}>
-                    <div>{states.top10.map(state => <div key={state[0]}>{state[0]}: {state[1]}</div>)}</div>
-                    <Bar data={states.top10}/>
+            <div className={styles.second}>
+                <div className={styles.userinfo}>
+                    <h2>Successfully connected with Spotify</h2>
+                    <h3>Top Artists:</h3>
+                    <div>{topArtists.map(artist => <div key={artist.name}>{artist.name}</div>)}</div>
+                    <h3>Top States:</h3> 
+                    <div className={styles.graph}>
+                        <div>{states.top10.map(state => <div key={state[0]}>{state[0]}: {state[1]}</div>)}</div>
+                        <Bar data={states.top10}/>
+                    </div>
+                    <h3>Bottom States:</h3>
+                    <div className={styles.graph}>
+                        <div>{states.bottom10.map(state => <div key={state[0]}>{state[0]}: {state[1]}</div>)}</div>
+                        <Bar data={states.bottom10}/>
+                    </div> 
+                    
+                    
                 </div>
-                <h3>Bottom States:</h3>
-                <div className={styles.graph}>
-                    <div>{states.bottom10.map(state => <div key={state[0]}>{state[0]}: {state[1]}</div>)}</div>
-                    <Bar data={states.bottom10}/>
-                </div> 
-                <h3>Top Genres:</h3>
-                <div>{topGenres.map(genre => <div key={genre[0]}>{genre[0]}: {genre[1]}</div>)}</div>
             </div>
         )
     }
@@ -97,3 +99,5 @@ class Login extends React.Component {
 
 export default Login;
 
+// <h3>Top Genres:</h3>
+// <div>{topGenres.map(genre => <div key={genre[0]}>{genre[0]}: {genre[1]}</div>)}</div>
