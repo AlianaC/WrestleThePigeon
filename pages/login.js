@@ -1,6 +1,8 @@
 import React from 'react' 
 import styles from '../styles/Home.module.css'
 import Bar from '../components/bar.js'
+import Link from 'next/link'
+import Navbar from './navbar.js'
 
 class Login extends React.Component {
 
@@ -75,6 +77,7 @@ class Login extends React.Component {
 
         return (
             <div className={styles.second}>
+                <Navbar />
                 <div className={styles.userinfo}>
                     <h2>Successfully connected with Spotify</h2>
                     <h3>Top Artists:</h3>
