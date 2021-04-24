@@ -12,6 +12,7 @@ class Navbar extends React.Component {
                 <Link href="/"><p>HOME</p></Link>
                 <Link href="/about"><p>ABOUT</p></Link>
                 <Link href="/predictionmodel"><p>PREDICTION MODEL</p></Link>
+                <Link href="/example"><p>EXAMPLE SPOTIFY</p></Link>
             </div>
         )
     }
