@@ -79,17 +79,19 @@ class Login extends React.Component {
             <div className={styles.second}>
                 <Navbar />
                 <div className={styles.userinfo}>
-                    <h2>Successfully connected with Spotify</h2>
-                    <h3>Top Artists:</h3>
-                    <div>{topArtists.map(artist => <div key={artist.name}>{artist.name}</div>)}</div>
-                    <h3>Top States:</h3> 
+                    <h2>You have successfully connected with Spotify</h2>
+                    <h3>Your Top Artists:</h3>
+                    <div>{topArtists.map(artist => <div className={styles.artist} key={artist.name}>{artist.name}</div>)}</div>
+                    <h3>Top States:</h3>
+                    <p>These are the top 10 states where your top Spotify artists have performed the most using the SongKick database</p> 
                     <div className={styles.graph}>
-                        <div>{states.top10.map(state => <div key={state[0]}>{state[0]}: {state[1]}</div>)}</div>
+                        <div className={styles.statelist}>{states.top10.map(state => <div key={state[0]}>{state[0]}: {state[1]}</div>)}</div>
                         <Bar data={states.top10}/>
                     </div>
                     <h3>Bottom States:</h3>
+                    <p>These are the bottom 10 states where your top Spotify artists have performed the least using the SongKick database</p> 
                     <div className={styles.graph}>
-                        <div>{states.bottom10.map(state => <div key={state[0]}>{state[0]}: {state[1]}</div>)}</div>
+                        <div className={styles.statelist}>{states.bottom10.map(state => <div key={state[0]}>{state[0]}: {state[1]}</div>)}</div>
                         <Bar data={states.bottom10}/>
                     </div> 
                     
