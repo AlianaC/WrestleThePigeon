@@ -21,13 +21,18 @@ export default async (req, res) => {
         topArtists.map(async (artist) => {
             var url = `https://api.songkick.com/api/3.0/search/artists.json?apikey=${key}&query=`;
             const res = await fetch(url + artist);
-            const id = await res.json();
+            //console.log(res.status);
 
-            //console.log(Object.keys(id.resultsPage.results).length);
-            if(Object.keys(id.resultsPage.results).length != 0){
-                //console.log("ARTIST: " + artist);
-                //console.log(artist + " " + id.resultsPage.results.artist[0].id);
-                ids.push(id.resultsPage.results.artist[0].id);
+            if(res.status == 200){
+                const id = await res.json();
+                
+                //console.log(artist);
+                //console.log(Object.keys(id.resultsPage.results).length);
+                if(Object.keys(id.resultsPage.results).length != 0){
+                    //console.log("ARTIST: " + artist);
+                    //console.log(artist + " " + id.resultsPage.results.artist[0].id);
+                    ids.push(id.resultsPage.results.artist[0].id);
+                }
             }
         })
     )
